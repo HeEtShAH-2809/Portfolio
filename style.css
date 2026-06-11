@@ -1,0 +1,359 @@
+/* --- Root Variable Definitions --- */
+:root {
+    --bg-black: #050505;
+    --card-black: #0c0c0c;
+    --border-dark: #1a1a1a;
+    --classic-red: #990000;
+    --bright-red: #cc0000;
+    --text-white: #ffffff;
+    --text-muted: #999999;
+    --text-dark: #666666;
+}
+
+/* --- Global Clean Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--text-white);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* --- Background Cultural Mandala Styling --- */
+.mandala-background {
+    position: fixed;
+    top: -10%;
+    right: -10%;
+    width: 800px;
+    height: 800px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg stroke='%23990000' stroke-width='0.15' fill='none' stroke-opacity='0.18'%3E%3Ccircle cx='50' cy='50' r='48'/%3E%3Ccircle cx='50' cy='50' r='42'/%3E%3Ccircle cx='50' cy='50' r='35' stroke-dasharray='1,1'/%3E%3Ccircle cx='50' cy='50' r='20'/%3E%3Ccircle cx='50' cy='50' r='8'/%3E%3Cpath d='M50,0 L50,100 M0,50 L100,50 M14.6,14.6 L85.4,85.4 M14.6,85.4 L85.4,14.6'/%3E%3Cpath d='M50,2A48,48 0 0,1 98,50A48,48 0 0,1 50,98A48,48 0 0,1 2,50A48,48 0 0,1 50,2' stroke-width='0.3'/%3E%3Cg id='p'%3E%3Cpath d='M50,8 C45,25 40,35 50,42 C60,35 55,25 50,8'/%3E%3Cpath d='M50,20 C47,30 43,35 50,50 C57,35 53,30 50,20'/%3E%3Ccircle cx='50' cy='14' r='1' fill='%23990000' fill-opacity='0.1'/%3E%3C/g%3E%3Cuse href='%23p' transform='rotate(30 50 50)'/%3E%3Cuse href='%23p' transform='rotate(60 50 50)'/%3E%3Cuse href='%23p' transform='rotate(90 50 50)'/%3E%3Cuse href='%23p' transform='rotate(120 50 50)'/%3E%3Cuse href='%23p' transform='rotate(150 50 50)'/%3E%3Cuse href='%23p' transform='rotate(180 50 50)'/%3E%3Cuse href='%23p' transform='rotate(210 50 50)'/%3E%3Cuse href='%23p' transform='rotate(240 50 50)'/%3E%3Cuse href='%23p' transform='rotate(270 50 50)'/%3E%3Cuse href='%23p' transform='rotate(300 50 50)'/%3E%3Cuse href='%23p' transform='rotate(330 50 50)'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+/* --- Layout Wrappers & Reusable Items --- */
+.section-wrapper {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 0 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.content-section {
+    padding: 90px 0;
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.grey-bg {
+    background-color: rgba(6, 6, 6, 0.7);
+}
+
+.text-red {
+    color: var(--bright-red);
+}
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 45px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: var(--classic-red);
+    margin-top: 8px;
+}
+
+/* --- Header / Navigation Bar --- */
+header {
+    background-color: rgba(5, 5, 5, 0.95);
+    border-bottom: 1px solid var(--border-dark);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--bright-red);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 35px;
+}
+
+header nav ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    transition: color 0.25s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--bright-red);
+}
+
+/* --- Hero Layout --- */
+.hero-section {
+    padding: 140px 0 100px 0;
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.subtitle-badge {
+    color: var(--classic-red);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.hero-section h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3.2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    max-width: 850px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.bio-text {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 720px;
+    font-weight: 300;
+}
+
+/* --- Core Attributes (Soft Skills) --- */
+.attributes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.attribute-card {
+    background-color: var(--card-black);
+    border: 1px solid var(--border-dark);
+    padding: 40px;
+    border-top: 3px solid var(--classic-red);
+}
+
+.attribute-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.attribute-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* --- Technical Skills Layout Rules --- */
+.skills-group-title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 35px 0 20px 0;
+    font-weight: 600;
+}
+
+.muted-title {
+    color: var(--text-dark);
+    border-top: 1px solid var(--border-dark);
+    padding-top: 30px;
+}
+
+.skills-grid {
+    display: grid;
+    gap: 25px;
+}
+
+.priority-grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+}
+
+.secondary-grid, .low-priority-grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+}
+
+.skill-item {
+    background-color: var(--card-black);
+    border: 1px solid var(--border-dark);
+    padding: 30px;
+}
+
+.skill-item.feature {
+    border-left: 4px solid var(--classic-red);
+}
+
+.skill-item h4 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.skill-item p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.skill-item.standard h4 {
+    color: #cccccc;
+}
+
+/* --- Classic Professional Timeline --- */
+.timeline {
+    border-left: 1px solid var(--classic-red);
+    padding-left: 30px;
+    margin-left: 10px;
+}
+
+.timeline-block {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.timeline-block:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-block::before {
+    content: '';
+    position: absolute;
+    left: -36px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--bg-black);
+    border: 2px solid var(--bright-red);
+    border-radius: 50%;
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+}
+
+.timeline-header h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    color: var(--bright-red);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.timeline-body p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    max-width: 800px;
+}
+
+/* --- Elegant Footer Layout --- */
+footer {
+    background-color: #020202;
+    padding: 50px 0;
+    border-top: 1px solid var(--border-dark);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    color: var(--text-dark);
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+footer .footer-note {
+    font-style: italic;
+}
+
+/* --- Responsive Adjustments --- */
+@media(max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+    header nav ul {
+        margin-top: 15px;
+    }
+    header nav ul li {
+        margin: 0 10px;
+    }
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    .attributes-grid, .priority-grid, .secondary-grid, .low-priority-grid {
+        grid-template-columns: 1fr;
+    }
+    .timeline-header {
+        flex-direction: column;
+    }
+    .timeline-date {
+        margin-top: 5px;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .mandala-background {
+        width: 500px;
+        height: 500px;
+        opacity: 0.4;
+    }
+}
