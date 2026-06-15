@@ -1,0 +1,452 @@
+Index: style.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/* --- Root Variable Definitions --- */\r\n:root {\r\n    --bg-black: #050505;\r\n    --card-black: #0c0c0c;\r\n    --border-dark: #1a1a1a;\r\n    --classic-red: #990000;\r\n    --bright-red: #cc0000;\r\n    --text-white: #ffffff;\r\n    --text-muted: #999999;\r\n    --text-dark: #666666;\r\n}\r\n\r\n/* --- Global Clean Reset --- */\r\n* {\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n    scroll-behavior: smooth;\r\n}\r\n\r\nbody {\r\n    background-color: var(--bg-black);\r\n    color: var(--text-white);\r\n    font-family: 'Inter', sans-serif;\r\n    line-height: 1.6;\r\n    overflow-x: hidden;\r\n    position: relative;\r\n}\r\n\r\n/* --- Background Cultural Mandala Styling --- */\r\n.mandala-background {\r\n    position: fixed;\r\n    top: -10%;\r\n    right: -10%;\r\n    width: 800px;\r\n    height: 800px;\r\n    background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg stroke='%23990000' stroke-width='0.15' fill='none' stroke-opacity='0.18'%3E%3Ccircle cx='50' cy='50' r='48'/%3E%3Ccircle cx='50' cy='50' r='42'/%3E%3Ccircle cx='50' cy='50' r='35' stroke-dasharray='1,1'/%3E%3Ccircle cx='50' cy='50' r='20'/%3E%3Ccircle cx='50' cy='50' r='8'/%3E%3Cpath d='M50,0 L50,100 M0,50 L100,50 M14.6,14.6 L85.4,85.4 M14.6,85.4 L85.4,14.6'/%3E%3Cpath d='M50,2A48,48 0 0,1 98,50A48,48 0 0,1 50,98A48,48 0 0,1 2,50A48,48 0 0,1 50,2' stroke-width='0.3'/%3E%3Cg id='p'%3E%3Cpath d='M50,8 C45,25 40,35 50,42 C60,35 55,25 50,8'/%3E%3Cpath d='M50,20 C47,30 43,35 50,50 C57,35 53,30 50,20'/%3E%3Ccircle cx='50' cy='14' r='1' fill='%23990000' fill-opacity='0.1'/%3E%3C/g%3E%3Cuse href='%23p' transform='rotate(30 50 50)'/%3E%3Cuse href='%23p' transform='rotate(60 50 50)'/%3E%3Cuse href='%23p' transform='rotate(90 50 50)'/%3E%3Cuse href='%23p' transform='rotate(120 50 50)'/%3E%3Cuse href='%23p' transform='rotate(150 50 50)'/%3E%3Cuse href='%23p' transform='rotate(180 50 50)'/%3E%3Cuse href='%23p' transform='rotate(210 50 50)'/%3E%3Cuse href='%23p' transform='rotate(240 50 50)'/%3E%3Cuse href='%23p' transform='rotate(270 50 50)'/%3E%3Cuse href='%23p' transform='rotate(300 50 50)'/%3E%3Cuse href='%23p' transform='rotate(330 50 50)'/%3E%3C/g%3E%3C/svg%3E\");\r\n    background-repeat: no-repeat;\r\n    background-size: contain;\r\n    pointer-events: none;\r\n    z-index: 0;\r\n    opacity: 0.8;\r\n}\r\n\r\n/* --- Layout Wrappers & Reusable Items --- */\r\n.section-wrapper {\r\n    max-width: 1050px;\r\n    margin: 0 auto;\r\n    padding: 0 30px;\r\n    position: relative;\r\n    z-index: 2;\r\n}\r\n\r\n.content-section {\r\n    padding: 90px 0;\r\n    border-bottom: 1px solid var(--border-dark);\r\n}\r\n\r\n.grey-bg {\r\n    background-color: rgba(6, 6, 6, 0.7);\r\n}\r\n\r\n.text-red {\r\n    color: var(--bright-red);\r\n}\r\n\r\n.section-title {\r\n    font-family: 'Cinzel', serif;\r\n    font-size: 2rem;\r\n    font-weight: 500;\r\n    letter-spacing: 2px;\r\n    margin-bottom: 45px;\r\n    text-transform: uppercase;\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n\r\n.section-title::after {\r\n    content: '';\r\n    display: block;\r\n    width: 40px;\r\n    height: 2px;\r\n    background-color: var(--classic-red);\r\n    margin-top: 8px;\r\n}\r\n\r\n/* --- Header / Navigation Bar --- */\r\nheader {\r\n    background-color: rgba(5, 5, 5, 0.95);\r\n    border-bottom: 1px solid var(--border-dark);\r\n    position: sticky;\r\n    top: 0;\r\n    z-index: 100;\r\n}\r\n\r\n.nav-container {\r\n    max-width: 1150px;\r\n    margin: 0 auto;\r\n    padding: 25px 30px;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n\r\nheader .logo {\r\n    font-family: 'Cinzel', serif;\r\n    font-size: 1.3rem;\r\n    font-weight: 700;\r\n    letter-spacing: 3px;\r\n    color: var(--bright-red);\r\n}\r\n\r\nheader nav ul {\r\n    list-style: none;\r\n    display: flex;\r\n}\r\n\r\nheader nav ul li {\r\n    margin-left: 35px;\r\n}\r\n\r\nheader nav ul li a {\r\n    color: var(--text-muted);\r\n    text-decoration: none;\r\n    font-size: 0.85rem;\r\n    text-transform: uppercase;\r\n    letter-spacing: 1.5px;\r\n    font-weight: 400;\r\n    transition: color 0.25s ease;\r\n}\r\n\r\nheader nav ul li a:hover {\r\n    color: var(--bright-red);\r\n}\r\n\r\n/* --- Hero Layout --- */\r\n.hero-section {\r\n    padding: 140px 0 100px 0;\r\n    border-bottom: 1px solid var(--border-dark);\r\n}\r\n\r\n.subtitle-badge {\r\n    color: var(--classic-red);\r\n    text-transform: uppercase;\r\n    font-size: 0.85rem;\r\n    letter-spacing: 3px;\r\n    font-weight: 600;\r\n    margin-bottom: 15px;\r\n}\r\n\r\n.hero-section h1 {\r\n    font-family: 'Cinzel', serif;\r\n    font-size: 3.2rem;\r\n    font-weight: 500;\r\n    line-height: 1.2;\r\n    max-width: 850px;\r\n    margin-bottom: 30px;\r\n    letter-spacing: 1px;\r\n}\r\n\r\n.bio-text {\r\n    font-size: 1.1rem;\r\n    color: var(--text-muted);\r\n    max-width: 720px;\r\n    font-weight: 300;\r\n}\r\n\r\n/* --- Core Attributes (Soft Skills) --- */\r\n.attributes-grid {\r\n    display: grid;\r\n    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));\r\n    gap: 40px;\r\n}\r\n\r\n.attribute-card {\r\n    background-color: var(--card-black);\r\n    border: 1px solid var(--border-dark);\r\n    padding: 40px;\r\n    border-top: 3px solid var(--classic-red);\r\n}\r\n\r\n.attribute-card h3 {\r\n    font-family: 'Cinzel', serif;\r\n    font-size: 1.3rem;\r\n    margin-bottom: 15px;\r\n    letter-spacing: 1px;\r\n}\r\n\r\n.attribute-card p {\r\n    color: var(--text-muted);\r\n    font-size: 0.95rem;\r\n}\r\n\r\n/* --- Technical Skills Layout Rules --- */\r\n.skills-group-title {\r\n    font-size: 1rem;\r\n    text-transform: uppercase;\r\n    letter-spacing: 2px;\r\n    margin: 35px 0 20px 0;\r\n    font-weight: 600;\r\n}\r\n\r\n.muted-title {\r\n    color: var(--text-dark);\r\n    border-top: 1px solid var(--border-dark);\r\n    padding-top: 30px;\r\n}\r\n\r\n.skills-grid {\r\n    display: grid;\r\n    gap: 25px;\r\n}\r\n\r\n.priority-grid {\r\n    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));\r\n}\r\n\r\n.secondary-grid, .low-priority-grid {\r\n    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));\r\n}\r\n\r\n.skill-item {\r\n    background-color: var(--card-black);\r\n    border: 1px solid var(--border-dark);\r\n    padding: 30px;\r\n}\r\n\r\n.skill-item.feature {\r\n    border-left: 4px solid var(--classic-red);\r\n}\r\n\r\n.skill-item h4 {\r\n    font-size: 1.15rem;\r\n    margin-bottom: 10px;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\n.skill-item p {\r\n    color: var(--text-muted);\r\n    font-size: 0.95rem;\r\n}\r\n\r\n.skill-item.standard h4 {\r\n    color: #cccccc;\r\n}\r\n\r\n/* --- Classic Professional Timeline --- */\r\n.timeline {\r\n    border-left: 1px solid var(--classic-red);\r\n    padding-left: 30px;\r\n    margin-left: 10px;\r\n}\r\n\r\n.timeline-block {\r\n    position: relative;\r\n    margin-bottom: 45px;\r\n}\r\n\r\n.timeline-block:last-child {\r\n    margin-bottom: 0;\r\n}\r\n\r\n.timeline-block::before {\r\n    content: '';\r\n    position: absolute;\r\n    left: -36px;\r\n    top: 6px;\r\n    width: 10px;\r\n    height: 10px;\r\n    background-color: var(--bg-black);\r\n    border: 2px solid var(--bright-red);\r\n    border-radius: 50%;\r\n}\r\n\r\n.timeline-header {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: baseline;\r\n    margin-bottom: 12px;\r\n}\r\n\r\n.timeline-header h3 {\r\n    font-family: 'Cinzel', serif;\r\n    font-size: 1.25rem;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\n.timeline-date {\r\n    font-size: 0.85rem;\r\n    color: var(--bright-red);\r\n    text-transform: uppercase;\r\n    letter-spacing: 1px;\r\n    font-weight: 600;\r\n}\r\n\r\n.timeline-body p {\r\n    color: var(--text-muted);\r\n    font-size: 0.95rem;\r\n    max-width: 800px;\r\n}\r\n\r\n/* --- Elegant Footer Layout --- */\r\nfooter {\r\n    background-color: #020202;\r\n    padding: 50px 0;\r\n    border-top: 1px solid var(--border-dark);\r\n}\r\n\r\n.footer-content {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n\r\nfooter p {\r\n    color: var(--text-dark);\r\n    font-size: 0.85rem;\r\n    letter-spacing: 0.5px;\r\n}\r\n\r\nfooter .footer-note {\r\n    font-style: italic;\r\n}\r\n\r\n/* --- Responsive Adjustments --- */\r\n@media(max-width: 768px) {\r\n    .nav-container {\r\n        flex-direction: column;\r\n        padding: 20px;\r\n    }\r\n    header nav ul {\r\n        margin-top: 15px;\r\n    }\r\n    header nav ul li {\r\n        margin: 0 10px;\r\n    }\r\n    .hero-section h1 {\r\n        font-size: 2.2rem;\r\n    }\r\n    .attributes-grid, .priority-grid, .secondary-grid, .low-priority-grid {\r\n        grid-template-columns: 1fr;\r\n    }\r\n    .timeline-header {\r\n        flex-direction: column;\r\n    }\r\n    .timeline-date {\r\n        margin-top: 5px;\r\n    }\r\n    .footer-content {\r\n        flex-direction: column;\r\n        gap: 15px;\r\n        text-align: center;\r\n    }\r\n    .mandala-background {\r\n        width: 500px;\r\n        height: 500px;\r\n        opacity: 0.4;\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/style.css b/style.css
+--- a/style.css	(revision 2574c6e4dd45c4c58c5c23df354414d7984a807c)
++++ b/style.css	(date 1781181337999)
+@@ -1,13 +1,13 @@
+ /* --- Root Variable Definitions --- */
+ :root {
+-    --bg-black: #050505;
+-    --card-black: #0c0c0c;
+-    --border-dark: #1a1a1a;
++    --bg-black: #ffffff;          /* Completely inverted to pure white background */
++    --card-black: #f8f9fa;        /* Soft off-white/light-gray for card contrast */
++    --border-dark: #e9ecef;       /* Crisp, light divider lines */
+     --classic-red: #990000;
+     --bright-red: #cc0000;
+-    --text-white: #ffffff;
+-    --text-muted: #999999;
+-    --text-dark: #666666;
++    --text-white: #000000;        /* Primary typography inverted to rich black */
++    --text-muted: #495057;        /* Elegant dark charcoal for readable body text */
++    --text-dark: #868e96;         /* Soft gray for metadata and subtle captions */
+ }
+ 
+ /* --- Global Clean Reset --- */
+@@ -27,6 +27,12 @@
+     position: relative;
+ }
+ 
++/* --- Dynamic Star Twinkle Keyframe --- */
++@keyframes stellarTwinkle {
++    0%, 100% { opacity: 0.3; transform: scale(0.96); }
++    50% { opacity: 0.8; transform: scale(1.04); }
++}
++
+ /* --- Background Cultural Mandala Styling --- */
+ .mandala-background {
+     position: fixed;
+@@ -34,12 +40,12 @@
+     right: -10%;
+     width: 800px;
+     height: 800px;
+-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg stroke='%23990000' stroke-width='0.15' fill='none' stroke-opacity='0.18'%3E%3Ccircle cx='50' cy='50' r='48'/%3E%3Ccircle cx='50' cy='50' r='42'/%3E%3Ccircle cx='50' cy='50' r='35' stroke-dasharray='1,1'/%3E%3Ccircle cx='50' cy='50' r='20'/%3E%3Ccircle cx='50' cy='50' r='8'/%3E%3Cpath d='M50,0 L50,100 M0,50 L100,50 M14.6,14.6 L85.4,85.4 M14.6,85.4 L85.4,14.6'/%3E%3Cpath d='M50,2A48,48 0 0,1 98,50A48,48 0 0,1 50,98A48,48 0 0,1 2,50A48,48 0 0,1 50,2' stroke-width='0.3'/%3E%3Cg id='p'%3E%3Cpath d='M50,8 C45,25 40,35 50,42 C60,35 55,25 50,8'/%3E%3Cpath d='M50,20 C47,30 43,35 50,50 C57,35 53,30 50,20'/%3E%3Ccircle cx='50' cy='14' r='1' fill='%23990000' fill-opacity='0.1'/%3E%3C/g%3E%3Cuse href='%23p' transform='rotate(30 50 50)'/%3E%3Cuse href='%23p' transform='rotate(60 50 50)'/%3E%3Cuse href='%23p' transform='rotate(90 50 50)'/%3E%3Cuse href='%23p' transform='rotate(120 50 50)'/%3E%3Cuse href='%23p' transform='rotate(150 50 50)'/%3E%3Cuse href='%23p' transform='rotate(180 50 50)'/%3E%3Cuse href='%23p' transform='rotate(210 50 50)'/%3E%3Cuse href='%23p' transform='rotate(240 50 50)'/%3E%3Cuse href='%23p' transform='rotate(270 50 50)'/%3E%3Cuse href='%23p' transform='rotate(300 50 50)'/%3E%3Cuse href='%23p' transform='rotate(330 50 50)'/%3E%3C/g%3E%3C/svg%3E");
++    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg stroke='%23990000' stroke-width='0.15' fill='none' stroke-opacity='0.12'%3E%3Ccircle cx='50' cy='50' r='48'/%3E%3Ccircle cx='50' cy='50' r='42'/%3E%3Ccircle cx='50' cy='50' r='35' stroke-dasharray='1,1'/%3E%3Ccircle cx='50' cy='50' r='20'/%3E%3Ccircle cx='50' cy='50' r='8'/%3E%3Cpath d='M50,0 L50,100 M0,50 L100,50 M14.6,14.6 L85.4,85.4 M14.6,85.4 L85.4,14.6'/%3E%3Cpath d='M50,2A48,48 0 0,1 98,50A48,48 0 0,1 50,98A48,48 0 0,1 2,50A48,48 0 0,1 50,2' stroke-width='0.3'/%3E%3Cg id='p'%3E%3Cpath d='M50,8 C45,25 40,35 50,42 C60,35 55,25 50,8'/%3E%3Cpath d='M50,20 C47,30 43,35 50,50 C57,35 53,30 50,20'/%3E%3Ccircle cx='50' cy='14' r='1' fill='%23990000' fill-opacity='0.1'/%3E%3C/g%3E%3Cuse href='%23p' transform='rotate(30 50 50)'/%3E%3Cuse href='%23p' transform='rotate(60 50 50)'/%3E%3Cuse href='%23p' transform='rotate(90 50 50)'/%3E%3Cuse href='%23p' transform='rotate(120 50 50)'/%3E%3Cuse href='%23p' transform='rotate(150 50 50)'/%3E%3Cuse href='%23p' transform='rotate(180 50 50)'/%3E%3Cuse href='%23p' transform='rotate(210 50 50)'/%3E%3Cuse href='%23p' transform='rotate(240 50 50)'/%3E%3Cuse href='%23p' transform='rotate(270 50 50)'/%3E%3Cuse href='%23p' transform='rotate(300 50 50)'/%3E%3Cuse href='%23p' transform='rotate(330 50 50)'/%3E%3C/g%3E%3C/svg%3E");
+     background-repeat: no-repeat;
+     background-size: contain;
+     pointer-events: none;
+     z-index: 0;
+-    opacity: 0.8;
++    opacity: 0.6; /* Softened slightly to blend elegantly with the white canvas */
+ }
+ 
+ /* --- Layout Wrappers & Reusable Items --- */
+@@ -48,16 +54,77 @@
+     margin: 0 auto;
+     padding: 0 30px;
+     position: relative;
+-    z-index: 2;
++    z-index: 5;
+ }
+ 
++/* GENERAL CONTENT SECTION BASE */
+ .content-section {
+     padding: 90px 0;
+     border-bottom: 1px solid var(--border-dark);
++    position: relative;
++    overflow: hidden;
++}
++
++/* MINIMALIST STAR CONSTELLATIONS (Inverted to sharp midnight dots) */
++.content-section::before {
++    content: '';
++    position: absolute;
++    top: 0;
++    left: 0;
++    width: 100%;
++    height: 100%;
++    /* Micro radial points acting as a crisp celestial map layout on white */
++    background-image:
++        radial-gradient(1px 1px at 12% 18%, rgba(0, 0, 0, 0.6) 100%, transparent),
++        radial-gradient(1.5px 1.5px at 38% 74%, rgba(0, 0, 0, 0.5) 100%, transparent),
++        radial-gradient(1px 1px at 56% 32%, rgba(0, 0, 0, 0.4) 100%, transparent),
++        radial-gradient(2px 2px at 72% 15%, rgba(0, 0, 0, 0.55) 100%, transparent),
++        radial-gradient(1px 1px at 89% 62%, rgba(0, 0, 0, 0.4) 100%, transparent),
++        radial-gradient(1.5px 1.5px at 25% 48%, rgba(15, 30, 90, 0.5) 100%, transparent),
++        radial-gradient(1px 1px at 68% 85%, rgba(120, 10, 10, 0.45) 100%, transparent);
++    background-size: 380px 380px;
++    opacity: 0;
++    z-index: 1;
++    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
++    pointer-events: none;
++}
++
++/* AMBIENT GLOW BACKDROP (Balanced perfectly for white background blending) */
++.content-section::after {
++    content: '';
++    position: absolute;
++    top: 50%;
++    left: 50%;
++    transform: translate(-50%, -50%) scale(0.8);
++    width: 700px;
++    height: 500px;
++    background: radial-gradient(
++        ellipse,
++        rgba(224, 30, 30, 0.12) 0%,   /* Soft crimson core */
++        rgba(75, 15, 90, 0.08) 50%,   /* Delicate purple horizon aura */
++        rgba(255, 255, 255, 0) 80%    /* Fades beautifully out into solid white */
++    );
++    filter: blur(50px);
++    -webkit-filter: blur(50px);
++    border-radius: 50%;
++    opacity: 0;
++    z-index: 2;
++    transition: opacity 0.8s ease, transform 0.8s ease;
++    pointer-events: none;
++}
++
++/* GLOBAL SECTION HOVER COMBINATION */
++.content-section:hover::before {
++    opacity: 1;
++    animation: stellarTwinkle 5s infinite ease-in-out;
++}
++.content-section:hover::after {
++    opacity: 1;
++    transform: translate(-50%, -50%) scale(1.1);
+ }
+ 
+ .grey-bg {
+-    background-color: rgba(6, 6, 6, 0.7);
++    background-color: rgba(248, 249, 250, 0.75); /* Clean light alternate background contrast */
+ }
+ 
+ .text-red {
+@@ -86,7 +153,7 @@
+ 
+ /* --- Header / Navigation Bar --- */
+ header {
+-    background-color: rgba(5, 5, 5, 0.95);
++    background-color: rgba(255, 255, 255, 0.95); /* Clean white glass morph effect */
+     border-bottom: 1px solid var(--border-dark);
+     position: sticky;
+     top: 0;
+@@ -102,12 +169,51 @@
+     align-items: center;
+ }
+ 
++/* LOGO BASE STYLING */
+ header .logo {
+     font-family: 'Cinzel', serif;
+     font-size: 1.3rem;
+     font-weight: 700;
+     letter-spacing: 3px;
+-    color: var(--bright-red);
++    color: var(--text-white);
++    text-decoration: none;
++    position: relative;
++    z-index: 10;
++    transition: text-shadow 0.4s ease;
++}
++
++/* LOGO HOVER AURA EFFECT */
++header .logo::after {
++    content: '';
++    position: absolute;
++    top: 50%;
++    left: 50%;
++    transform: translate(-50%, -50%) scale(0.4);
++    width: 160px;
++    height: 160px;
++    background: radial-gradient(
++        circle,
++        rgba(224, 30, 30, 0.18) 0%,
++        rgba(75, 15, 90, 0.12) 45%,
++        rgba(255, 255, 255, 0) 70%
++    );
++    filter: blur(15px);
++    -webkit-filter: blur(15px);
++    border-radius: 50%;
++    opacity: 0;
++    z-index: -1;
++    transition: opacity 0.5s ease, transform 0.5s ease;
++    pointer-events: none;
++}
++
++/* LOGO HOVER TRIGGER */
++header .logo:hover::after {
++    opacity: 1;
++    transform: translate(-50%, -50%) scale(1.1);
++}
++
++header .logo:hover {
++    text-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+ }
+ 
+ header nav ul {
+@@ -133,14 +239,72 @@
+     color: var(--bright-red);
+ }
+ 
+-/* --- Hero Layout --- */
++/* --- Hero Layout & Cosmic Stars --- */
+ .hero-section {
+     padding: 140px 0 100px 0;
+     border-bottom: 1px solid var(--border-dark);
++    position: relative;
++    overflow: hidden;
++}
++
++/* HERO STARS BACKGROUND LAYER */
++.hero-section::before {
++    content: '';
++    position: absolute;
++    top: 0;
++    left: 0;
++    width: 100%;
++    height: 100%;
++    background-image:
++        radial-gradient(1.5px 1.5px at 15% 25%, rgba(0, 0, 0, 0.55) 100%, transparent),
++        radial-gradient(2px 2px at 45% 65%, rgba(0, 0, 0, 0.5) 100%, transparent),
++        radial-gradient(1px 1px at 30% 85%, rgba(0, 0, 0, 0.4) 100%, transparent),
++        radial-gradient(1px 1px at 78% 22%, rgba(0, 0, 0, 0.45) 100%, transparent),
++        radial-gradient(2.5px 2.5px at 62% 45%, rgba(0, 0, 0, 0.4) 100%, transparent),
++        radial-gradient(1.5px 1.5px at 88% 70%, rgba(15, 30, 90, 0.45) 100%, transparent);
++    background-size: 320px 320px;
++    opacity: 0;
++    z-index: 1;
++    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
++    pointer-events: none;
++}
++
++/* HERO HOVER AMBIENT GLOW OVERLAY */
++.hero-section::after {
++    content: '';
++    position: absolute;
++    top: 35%;
++    left: 15%;
++    transform: translate(-50%, -50%) scale(0.8);
++    width: 600px;
++    height: 450px;
++    background: radial-gradient(
++        ellipse,
++        rgba(224, 30, 30, 0.14) 0%,
++        rgba(35, 10, 75, 0.09) 50%,
++        rgba(255, 255, 255, 0) 80%
++    );
++    filter: blur(50px);
++    -webkit-filter: blur(50px);
++    border-radius: 50%;
++    opacity: 0;
++    z-index: 2;
++    transition: opacity 0.8s ease, transform 0.8s ease;
++    pointer-events: none;
++}
++
++/* TRIGGER HERO BACKGROUND GLOW AND TWINKLE ON HOVER */
++.hero-section:hover::before {
++    opacity: 1;
++    animation: stellarTwinkle 4s infinite ease-in-out;
++}
++.hero-section:hover::after {
++    opacity: 1;
++    transform: translate(-50%, -50%) scale(1.2);
+ }
+ 
+ .subtitle-badge {
+-    color: var(--classic-red);
++    color: var(--bright-red);
+     text-transform: uppercase;
+     font-size: 0.85rem;
+     letter-spacing: 3px;
+@@ -177,6 +341,8 @@
+     border: 1px solid var(--border-dark);
+     padding: 40px;
+     border-top: 3px solid var(--classic-red);
++    position: relative;
++    z-index: 10;
+ }
+ 
+ .attribute-card h3 {
+@@ -223,6 +389,8 @@
+     background-color: var(--card-black);
+     border: 1px solid var(--border-dark);
+     padding: 30px;
++    position: relative;
++    z-index: 10;
+ }
+ 
+ .skill-item.feature {
+@@ -241,7 +409,7 @@
+ }
+ 
+ .skill-item.standard h4 {
+-    color: #cccccc;
++    color: #212529;
+ }
+ 
+ /* --- Classic Professional Timeline --- */
+@@ -249,6 +417,8 @@
+     border-left: 1px solid var(--classic-red);
+     padding-left: 30px;
+     margin-left: 10px;
++    position: relative;
++    z-index: 10;
+ }
+ 
+ .timeline-block {
+@@ -299,17 +469,50 @@
+     max-width: 800px;
+ }
+ 
+-/* --- Elegant Footer Layout --- */
++/* --- Elegant Footer Layout & Ambient Glow --- */
+ footer {
+-    background-color: #020202;
++    background-color: #fdfdfd;
+     padding: 50px 0;
+     border-top: 1px solid var(--border-dark);
++    position: relative;
++    overflow: hidden;
++}
++
++/* BASE GLOW SPECIFICALLY FOR THE FOOTER FLOOR */
++footer::after {
++    content: '';
++    position: absolute;
++    bottom: -40px;
++    left: 50%;
++    transform: translateX(-50%) scale(0.8);
++    width: 500px;
++    height: 150px;
++    background: radial-gradient(
++        ellipse,
++        rgba(224, 30, 30, 0.08) 0%,
++        rgba(35, 10, 75, 0.05) 60%,
++        rgba(255, 255, 255, 0) 90%
++    );
++    filter: blur(35px);
++    -webkit-filter: blur(35px);
++    border-radius: 50%;
++    opacity: 0;
++    z-index: 1;
++    transition: opacity 0.6s ease, transform 0.6s ease;
++    pointer-events: none;
++}
++
++footer:hover::after {
++    opacity: 1;
++    transform: translateX(-50%) scale(1.1);
+ }
+ 
+ .footer-content {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
++    position: relative;
++    z-index: 10;
+ }
+ 
+ footer p {
+@@ -354,6 +557,15 @@
+     .mandala-background {
+         width: 500px;
+         height: 500px;
+-        opacity: 0.4;
++        opacity: 0.3;
++    }
++    .hero-section::after {
++        width: 300px;
++        height: 300px;
++        left: 50%;
++    }
++    .content-section::after {
++        width: 280px;
++        height: 280px;
+     }
+ }
+\ No newline at end of file
+Index: extra/main.py
+===================================================================
+diff --git a/extra/main.py b/extra/main.py
+deleted file mode 100644
+--- a/extra/main.py	(revision 2574c6e4dd45c4c58c5c23df354414d7984a807c)
++++ /dev/null	(revision 2574c6e4dd45c4c58c5c23df354414d7984a807c)
+@@ -1,16 +0,0 @@
+-# This is a sample Python script.
+-
+-# Press Shift+F10 to execute it or replace it with your code.
+-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+-
+-
+-def print_hi(name):
+-    # Use a breakpoint in the code line below to debug your script.
+-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+-
+-
+-# Press the green button in the gutter to run the script.
+-if __name__ == '__main__':
+-    print_hi('PyCharm')
+-
+-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+Index: extra/Portf.html
+===================================================================
+diff --git a/extra/Portf.html b/extra/Portf.html
+deleted file mode 100644
+--- a/extra/Portf.html	(revision 2574c6e4dd45c4c58c5c23df354414d7984a807c)
++++ /dev/null	(revision 2574c6e4dd45c4c58c5c23df354414d7984a807c)
+@@ -1,13 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="en">
+-<head>
+-    <meta charset="UTF-8">
+-    <title>HeEt</title>
+-</head>
+-<body>
+-<h1>HellO JaVa Script</h1>
+-<h1 id="dis-name"></h1>
+-    <script src="prac.js"></script>
+-    <button onclick="greet()">Click here</button>
+-</body>
+-</html>
+\ No newline at end of file
+Index: extra/prac.js
+===================================================================
+diff --git a/extra/prac.js b/extra/prac.js
+deleted file mode 100644
+--- a/extra/prac.js	(revision 2574c6e4dd45c4c58c5c23df354414d7984a807c)
++++ /dev/null	(revision 2574c6e4dd45c4c58c5c23df354414d7984a807c)
+@@ -1,17 +0,0 @@
+-const cars = ["Saab","BMW","Merc"]
+-
+-console.log(cars[0]);
+-console.log(cars[2]);
+-console.log(cars[1]);
+-
+-var globVar = " Supp its Global variable";
+-
+-function exFunc()
+-    {
+-    console.log(globVar);
+-    console.log("Its me another text")
+-    }
+-
+-exFunc();
+-console.log(globVar )
+-
+diff --git a/extra/portf.css b/extra/portf.css
+deleted file mode 100644
